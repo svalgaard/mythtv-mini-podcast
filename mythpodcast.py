@@ -2,7 +2,6 @@
 # -*- encoding: utf-8 -*-
 #
 # Must be run on the MythTV backend
-# Requries HandBrakeCLI
 #
 # (c) 2014, Jens Svalgaard Kohrt
 #
@@ -19,13 +18,12 @@ import xml.sax.saxutils
 
 CONFIG_FN = '~/.mythpodcast.cfg'
 
-CONV_CMD = ('HandBrakeCLI '
-            '-f mp4 -m -O '
-            '-v 1 '
-            '-e x264 --x264-preset medium --x264-profile high '
-            '-q 22.0 -r 25 -X 768 --custom-anamorphic --keep-display-aspect '
-            '-E faac -B 128 -mixdown stereo -R Auto -D 1.1 '
-            '--input "%(src)s" --output "%(dst)s"')
+CONV_CMD = ('mythffmpeg '
+            '-ss 2 -i "%(src)s" '
+            '-strict -2 -acodec aac -ac 2 -b:a 160k '
+            '-vcodec libx264 -b:v 1200k -vf scale=1024 '
+            '-f mp4 -threads 0 '
+            '"%(dst)s" -y')
 
 
 def setupConfig(config_fn=None):
