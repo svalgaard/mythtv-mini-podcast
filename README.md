@@ -14,8 +14,8 @@ This has only been tested with a setup with one mythtv backend server, and mythp
 HOWTO
 -----
 
-Edit <pre>sample.mythpodcast.cfg</pre> and copy it to <pre>~/.mythpodcast.cfg</pre>.
-Running <pre>mythpodcast.py</pre> with the provided sample.mythpodcast.cfg file, you get a file structure similar to what is shown below.
+Edit sample.mythpodcast.cfg and copy it to <pre>~/.mythpodcast.cfg.
+Running mythpodcast.py with the provided sample.mythpodcast.cfg file, you get a file structure similar to what is shown below.
 The files can then subsequently be served using e.g. an apache webserver.
 
 <pre>
@@ -44,7 +44,10 @@ To use this on your iPad, locate the podcast.xml files inside safari, and the po
 See also
 ========
 
-* https://code.google.com/p/mythpodcaster/
+* http://www.mythtv.org/wiki/Streaming_to_iPod_touch_or_iPhone - the
+  aim is to replace what is on this page
+* https://code.google.com/p/mythpodcaster/ - this is a more general
+  solution
 
 Who
 ===
