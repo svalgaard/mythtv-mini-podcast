@@ -19,11 +19,11 @@ import xml.sax.saxutils
 CONFIG_FN = '~/.mythpodcast.cfg'
 
 CONV_CMD = ('mythffmpeg '
-            '-ss 2 -i "%(src)s" '
-            '-strict -2 -acodec aac -ac 2 -b:a 160k '
-            '-vcodec libx264 -b:v 1200k -vf scale=1024 '
-            '-f mp4 -threads 0 '
-            '"%(dst)s" -y')
+            '-ss 2 -i "%(src)s" '  # skip first two seconds
+            '-strict -2 -acodec aac -ac 2 -b:a 160k '  # stereo audio
+            '-vcodec libx264 -b:v 1200k -vf scale=1024 '  # mp4 scale to w=1024
+            '-threads 0 '  # use multiple cores
+            '-f mp4 "%(dst)s" -y')  # overwrite dst
 
 
 def setupConfig(config_fn=None):
