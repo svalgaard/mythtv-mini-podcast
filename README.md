@@ -14,7 +14,8 @@ This has only been tested with a setup with one mythtv backend server, and mythp
 HOWTO
 -----
 
-Edit sample.mythpodcast.cfg and copy it to <pre>~/.mythpodcast.cfg.
+Edit sample.mythpodcast.cfg and copy it to ~/.mythpodcast.cfg.
+
 Running mythpodcast.py with the provided sample.mythpodcast.cfg file, you get a file structure similar to what is shown below.
 The files can then subsequently be served using e.g. an apache webserver.
 
